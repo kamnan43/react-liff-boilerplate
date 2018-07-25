@@ -9,9 +9,9 @@ import Header from './pages/components/Header';
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <h3 className="App-title">React LIFF Boilerplate</h3>
+      <div className="app">
+        <header className="app-header">
+          <h3 className="app-title">React LIFF Boilerplate</h3>
         </header>
         <Header />
         <Router>

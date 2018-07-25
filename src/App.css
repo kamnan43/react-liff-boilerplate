@@ -1,14 +1,27 @@
-.App {
+.app {
   text-align: center;
 }
 
-.App-header {
+.app-header {
   background-color: #00C300;
   height: 50px;
   padding: 5px;
   color: white;
 }
 
-.App-title {
+.app-title {
   font-size: 1.5em;
+}
+
+.avatar-img {
+  border-radius: 50%;
+}
+
+.page-content {
+  padding: 5px;
+}
+
+.message-label {
+  text-align: left;
+  display: block;
 }
