@@ -1,18 +1,26 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import { BrowserRouter as Router, Route } from "react-router-dom";
 import './App.css';
+import Profile from './pages/Profile';
+import SendMessage from './pages/SendMessage';
+import LIFFWindow from './pages/LIFFWindow';
+import Header from './pages/components/Header';
 
 class App extends Component {
   render() {
     return (
       <div className="App">
         <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
+          <h3 className="App-title">React LIFF Boilerplate</h3>
         </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+        <Header />
+        <Router>
+          <div>
+            <Route exact path="/" component={Profile} />
+            <Route path="/message" component={SendMessage} />
+            <Route path="/window" component={LIFFWindow} />
+          </div>
+        </Router>
       </div>
     );
   }
