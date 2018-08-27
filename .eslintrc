@@ -1,0 +1,11 @@
+{
+  "extends": ["standard", "standard-jsx"],
+  "rules": {
+    "semi": [1, "always"],
+    "comma-dangle": [2, "always-multiline"],
+    "operator-linebreak": [0, "always"],
+    "space-before-function-paren": [0, "always"],
+    "jsx-quotes": ["error", "prefer-double"],
+    "no-new-func": [0, "always"]
+  }
+}
