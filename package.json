@@ -1,6 +1,6 @@
 {
   "name": "react-liff-boilerplate",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "private": true,
   "dependencies": {
     "bootstrap": "^3.3.7",
@@ -17,7 +17,6 @@
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
-    "ngrok": "./ngrok http 3000",
-    "register": "cd src/liff-register && node index.js -c ./test.json && cd .."
+    "ngrok": "./ngrok http 3000"
   }
 }
