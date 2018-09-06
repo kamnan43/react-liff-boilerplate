@@ -3,7 +3,6 @@ import liffHelper from '../utils/liffHelper';
 import messageHelper from '../utils/messagingApiHelper';
 import swal from 'sweetalert2';
 import { geolocated } from 'react-geolocated';
-import liffConfig from '../liff-register/save-app.json';
 
 const messageTypes = [
   { key: 'text', label: 'Text', editable: true, value: 'Some Text' },
@@ -15,7 +14,6 @@ const messageTypes = [
   { key: 'confirm', label: 'Template - Confirm', editable: false, value: 'Confirm' },
   { key: 'carousel', label: 'Template - Carousel', editable: false, value: 'Carousel', disabled: true },
   { key: 'image-carousel', label: 'Template - Image carousel', editable: false, value: 'Image carousel', disabled: true },
-  // { key: 'sticker', label: 'Sticker', editable: false, value: 'LIFF Can\'t send Sticker', disabled: true },
 ];
 
 class SendMessage extends Component {
@@ -31,9 +29,6 @@ class SendMessage extends Component {
 
   sendMessageToChat(messageKey) {
     let value = this.textInput[messageKey].value;
-    let profileLiffId = liffConfig.find(app => { return app.name === 'Profile' });
-    let messageLiffId = liffConfig.find(app => { return app.name === 'SendMessage' });
-    let windowLiffId = liffConfig.find(app => { return app.name === 'LIFFWindow' });
     let message;
     switch (messageKey) {
       case 'text':
@@ -48,19 +43,14 @@ class SendMessage extends Component {
         let actions = [
           {
             "type": "uri",
-            "label": "Profile",
-            "uri": `line://app/${profileLiffId.liffId}`
+            "label": "Google",
+            "uri": `https://google.com`
           },
           {
             "type": "uri",
-            "label": "Send Message",
-            "uri": `line://app/${messageLiffId.liffId}`
+            "label": "Facebook",
+            "uri": `https://facebook.com`
           },
-          {
-            "type": "uri",
-            "label": "LIFF Window",
-            "uri": `line://app/${windowLiffId.liffId}`
-          }
         ];
         message = messageHelper.createButtonMessageWithImage('Select Page', 'Send Buttton Demo', 'https://scontent.fbkk1-1.fna.fbcdn.net/v/t1.0-9/29389275_1901092573269456_3839896059081916416_o.jpg?_nc_fx=fbkk1-5&_nc_cat=0&_nc_eui2=AeHkPXfv3Tgud9Gr5ZAKjd6ckQk3BefxkIjTbJ4mMzvuD6C1HwNQV5BY5PeIVNDXttAiSo8vWBVYr5rJu6C-XF4Wvyfs8MqxRwtR6DLgZqTpZg&oh=f1d2e14385b2ecfa259baae39cfbb6e7&oe=5C0BACFE', actions);
         break;
@@ -69,12 +59,12 @@ class SendMessage extends Component {
           {
             "type": "uri",
             "label": "YES",
-            "uri": `line://app/${messageLiffId.liffId}`
+            "uri": `https://google.com`
           },
           {
             "type": "uri",
             "label": "NO",
-            "uri": `line://app/${profileLiffId.liffId}/?a=1`
+            "uri": `https://facebook.com`
           }
         ];
         message = messageHelper.createConfirmMessage('Send Message again', confirmActions);
