@@ -1,4 +1,4 @@
-# react-liff-boilerplate
+# line-liff-react
 Starter Kit for ReactJs developer to run and learn [LINE Frontend Framework](https://developers.line.me/en/docs/liff/overview/) (LIFF)
 
 ## Prerequisites
@@ -73,7 +73,7 @@ Sitthi Thiammekha
 
 ## Deploying the application
 
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/line/line-liff-starter)
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/BensonLiao/line-liff-react)
 
 1. Click the above "Deploy to Heroku button".
 2. Fill in the required information on the "Create a New App" page in Heroku.
