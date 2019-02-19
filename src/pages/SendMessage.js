@@ -10,7 +10,7 @@ const messageTypes = [
     key: 'text', 
     label: 'Text', 
     editable: true, 
-    value: 'Some Text' 
+    value: 'give me brown' 
   },
   { 
     key: 'image', 
