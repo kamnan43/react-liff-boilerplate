@@ -22,36 +22,31 @@ const messageTypes = [
     key: 'video', 
     label: 'Video', 
     editable: false, 
-    value: 'https://www.sample-videos.com/video/mp4/720/big_buck_bunny_720p_5mb.mp4', 
-    disabled: true  
+    value: 'https://www.sample-videos.com/video/mp4/720/big_buck_bunny_720p_5mb.mp4' 
   },
   { 
     key: 'audio', 
     label: 'Audio', 
     editable: false, 
-    value: 'https://cdn.online-convert.com/example-file/audio/m4a/example.m4a', 
-    disabled: true  
+    value: 'https://cdn.online-convert.com/example-file/audio/m4a/example.m4a' 
   },
   { 
     key: 'location', 
     label: 'Location', 
     editable: false, 
-    value: 'Location', 
-    disabled: true  
+    value: 'Location' 
   },
   { 
     key: 'button', 
     label: 'Template - Button', 
     editable: false, 
-    value: 'Button', 
-    disabled: true  
+    value: 'Button' 
   },
   { 
     key: 'confirm', 
     label: 'Template - Confirm', 
     editable: false, 
-    value: 'Confirm', 
-    disabled: true  
+    value: 'Confirm' 
   },
   { 
     key: 'carousel', 
