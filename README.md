@@ -42,25 +42,25 @@ Utility class `liffHelper` automatic initial LIFF when application launched. You
 liffHelper.getProfile()
    .then(profile => {
       // do something
-   });
+   })
 ```
 ## Get LIFF Info
 Get User Context information
 ```
-liffHelper.getLIFFInfo();
+liffHelper.getLIFFInfo()
 ```
 return [result](https://developers.line.me/en/reference/liff/#liffinit())
 
 ## Send Message
 ```
-const message = messagingApiHelper.createTextMessage('text');
-liffHelper.sendMessages(message);
+const message = messagingApiHelper.createTextMessage('text')
+liffHelper.sendMessages(message)
 ```
 ## LIFF Window
 ```
-liffHelper.openWindow('https://url.com', false);   // open url in LINE browser
-liffHelper.openWindow('https://url.com', true);    // open url in external browser
-liffHelper.closeWindow();                          // close LIFF window
+liffHelper.openWindow('https://url.com', false)   // open url in LINE browser
+liffHelper.openWindow('https://url.com', true)    // open url in external browser
+liffHelper.closeWindow()                          // close LIFF window
 ```
 
 ## Author

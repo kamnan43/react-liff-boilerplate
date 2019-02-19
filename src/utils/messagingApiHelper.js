@@ -2,7 +2,7 @@ function createTextMessage(text) {
   return {
     type: 'text',
     text: text
-  };
+  }
 }
 
 function createImageMessage(originalContentUrl, previewImageUrl) {
@@ -10,7 +10,7 @@ function createImageMessage(originalContentUrl, previewImageUrl) {
     type: 'image',
     originalContentUrl: originalContentUrl,
     previewImageUrl
-  };
+  }
 }
 
 function createVDOMessage(originalContentUrl, previewImageUrl) {
@@ -18,7 +18,7 @@ function createVDOMessage(originalContentUrl, previewImageUrl) {
     type: 'video',
     originalContentUrl: originalContentUrl,
     previewImageUrl: previewImageUrl
-  };
+  }
 }
 
 function createAudioMessage(originalContentUrl, duration) {
@@ -26,7 +26,7 @@ function createAudioMessage(originalContentUrl, duration) {
     type: 'audio',
     originalContentUrl: originalContentUrl,
     duration: duration
-  };
+  }
 }
 
 function createButtonMessage(title, actions) {
@@ -38,7 +38,7 @@ function createButtonMessage(title, actions) {
       text: title.substring(0, 60),
       actions: actions,
     },
-  };
+  }
 }
 
 function createButtonMessageWithImage(title, text, imageUrl, actions) {
@@ -53,7 +53,7 @@ function createButtonMessageWithImage(title, text, imageUrl, actions) {
       // defaultAction: actions.getImageAction(extra),
       actions: actions,
     },
-  };
+  }
 }
 
 function createLocationMessage(latitude, longitude) {
@@ -75,7 +75,7 @@ function createConfirmMessage(title, actions) {
       text: title,
       actions: actions,
     },
-  };
+  }
 }
 
 function createCarouselMessage(title, columns) {
@@ -86,11 +86,11 @@ function createCarouselMessage(title, columns) {
       type: 'carousel',
       columns: columns,
     },
-  };
+  }
 }
 
 // function createCarouselColumns(title, text, imageUrl, extra, isFriend) {
-//   let columnOptions = options.getCandidateProfileAction(extra, isFriend);
+//   let columnOptions = options.getCandidateProfileAction(extra, isFriend)
 //   return {
 //     thumbnailImageUrl: imageUrl,
 //     title: title.substring(0, 40),
@@ -98,7 +98,7 @@ function createCarouselMessage(title, columns) {
 //     defaultAction: options.getImageAction(extra),
 //     actions: columnOptions
 
-//   };
+//   }
 // }
 
 function createImageCarouselMessage(title, columns) {
@@ -109,14 +109,14 @@ function createImageCarouselMessage(title, columns) {
       type: 'image_carousel',
       columns: columns,
     },
-  };
+  }
 }
 
 // function createImageCarouselColumns(actionText, imageUrl, extra) {
 //   return {
 //     imageUrl: imageUrl,
 //     action: options.getCandidateImageAction(actionText, extra)
-//   };
+//   }
 // }
 
 function createFlexMessage(title, containers) {
@@ -124,14 +124,14 @@ function createFlexMessage(title, containers) {
     "type": "flex",
     "altText": title,
     "contents": containers
-  };
+  }
 }
 
 function createFlexCarouselMessage(title, containers) {
   return createFlexMessage(title, {
     "type": "carousel",
     "contents": containers,
-  });
+  })
 }
 
 module.exports = {
@@ -150,4 +150,4 @@ module.exports = {
   createFlexMessage: createFlexMessage,
   createFlexCarouselMessage: createFlexCarouselMessage,
   // maxCarouselColumns: maxCarouselColumns
-};
+}

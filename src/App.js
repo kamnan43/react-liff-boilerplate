@@ -1,10 +1,10 @@
-import React, { Component } from 'react';
-import { BrowserRouter as Router, Route } from "react-router-dom";
-import './App.css';
-import Profile from './pages/Profile';
-import SendMessage from './pages/SendMessage';
-import LIFFWindow from './pages/LIFFWindow';
-import Header from './pages/components/Header';
+import React, { Component } from 'react'
+import { BrowserRouter as Router, Route } from "react-router-dom"
+import './App.css'
+import Profile from './pages/Profile'
+import SendMessage from './pages/SendMessage'
+import LIFFWindow from './pages/LIFFWindow'
+import Header from './pages/components/Header'
 
 class App extends Component {
   render() {
@@ -22,8 +22,8 @@ class App extends Component {
           </div>
         </Router>
       </div>
-    );
+    )
   }
 }
 
-export default App;
+export default App
