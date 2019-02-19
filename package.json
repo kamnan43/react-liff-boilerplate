@@ -14,7 +14,8 @@
     "sweetalert2": "^7.26.9"
   },
   "scripts": {
-    "start": "PORT=8000 react-scripts start",
+    "start": "react-scripts start",
+    "localstart": "PORT=8000 react-scripts start",
     "lt": "node ./node_modules/localtunnel/bin/client --port=8000",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
