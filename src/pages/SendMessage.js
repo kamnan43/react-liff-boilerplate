@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import liffHelper from '../utils/liffHelper'
-import messageHelper from '../utils/messagingApiHelper'
 import swal from 'sweetalert2'
 import { geolocated } from 'react-geolocated'
+import liffHelper from '../utils/liffHelper'
+import messageHelper from '../utils/messagingApiHelper'
 
 const messageTypes = [
   { 
@@ -154,49 +154,50 @@ class SendMessage extends Component {
     }
   }
 
-  render() {
-    let formGroups = messageTypes.map((messageType, index) => {
-      return (
-        <div className="form-group" key={index}>
-          <label 
+  renderMessageTypeKey() {
+    return messageTypes.map((messageType) => (
+      <div className="form-group" key={messageType.key}>
+        <label 
           htmlFor={`msg_${messageType.key}`} 
           className="message-label">
           {messageType.label}:
-          </label>
-          <div className="input-group">
-            <input 
+        </label>
+        <div className="input-group">
+          <input 
             ref={this.setTextInputRef.bind(this, messageType.key)} 
             id={`msg_${messageType.key}`} 
             disabled={!messageType.editable} 
             type="text" 
             className="form-control" 
             defaultValue={messageType.value} 
-            />
-            <span className="input-group-btn">
-              <button 
-              className="btn btn-default" 
-              type="button" 
-              disabled={messageType.disabled} 
-              onClick={this.sendMessageToChat.bind(this, `${messageType.key}`)} >
-              Send
-            </button>
-            </span>
-          </div>
+          />
+          <span className="input-group-btn">
+          <button 
+            type="button" 
+            className="btn btn-default" 
+            disabled={messageType.disabled} 
+            onClick={this.sendMessageToChat.bind(this, `${messageType.key}`)} >
+            Send
+          </button>
+          </span>
         </div>
-      )
-    })
+      </div>
+    ))
+  }
+
+  render() {
     return (
       <div className="page-content">
         <div className="col-lg-3" />
         <div className="col-lg-6">
-          {formGroups}
+          {this.renderMessageTypeKey()}
           <hr />
           <button 
-          type="button" 
-          className="btn btn-default" 
-          onClick={() => { liffHelper.closeWindow() }}>
-          Close LIFF
-        </button>
+            type="button" 
+            className="btn btn-default" 
+            onClick={() => { liffHelper.closeWindow() }}>
+            Close LIFF
+          </button>
         </div>
         <div className="col-lg-3" />
       </div>
@@ -211,7 +212,12 @@ export default geolocated({
   userDecisionTimeout: 5000,
 })(SendMessage)
 
-SendMessage.PropTypes = {
-  textInput: PropTypes.array.isRequired,
-  setTextInputRef: PropTypes.func.isRequired,
+//For later implementation
+SendMessage.propTypes = {
+  isGeolocationAvailable: PropTypes.bool,
+  isGeolocationEnabled: PropTypes.bool,
+  coords: PropTypes.shape({
+    latitude: PropTypes.number,
+    longitude: PropTypes.number,
+  }),
 }

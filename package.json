@@ -4,7 +4,6 @@
   "private": true,
   "dependencies": {
     "bootstrap": "^3.3.7",
-    "localtunnel": "^1.9.1",
     "react": "^16.4.1",
     "react-bootstrap": "^0.32.1",
     "react-dom": "^16.4.1",
@@ -12,6 +11,9 @@
     "react-router-dom": "^4.3.1",
     "react-scripts": "1.1.4",
     "sweetalert2": "^7.26.9"
+  },
+  "devDependencies": {
+    "localtunnel": "^1.9.1"
   },
   "scripts": {
     "start": "react-scripts start",
