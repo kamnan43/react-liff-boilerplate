@@ -1,11 +1,15 @@
 import React, { Component } from 'react'
-// import PropTypes from 'prop-types'
 import man from '../assets/img/man.png'
 import liffHelper from '../utils/liffHelper'
 
 export default class Profile extends Component {
   state = {
-    profile: { pictureUrl: man }
+    profile: { 
+      pictureUrl: man,
+      userId: '',
+      displayName: '',
+      statusMessage: '',
+    }
   }
 
   componentDidMount() {
