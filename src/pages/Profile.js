@@ -4,78 +4,76 @@ import liffHelper from '../utils/liffHelper'
 
 export default class Profile extends Component {
   state = {
-    profile: { 
+    profile: {
       pictureUrl: man,
       userId: '',
       displayName: '',
-      statusMessage: '',
+      statusMessage: ''
     }
   }
 
   componentDidMount() {
-    liffHelper
-      .getProfile()
-      .then(profile => this.setState({ profile }));
+    liffHelper.getProfile().then(profile => this.setState({ profile }))
   }
 
   render() {
+    // destructing assignment
+    const {
+      profile: { pictureUrl, userId, displayName, statusMessage }
+    } = this.state
     return (
       <div className="page-content">
         <div className="col-lg-3" />
         <div className="col-lg-6">
           <div>
-            <img 
-              width="130" 
-              className="avatar-img" 
-              alt="profile" 
-              src={this.state.profile.pictureUrl} 
-            />
+            <img width="130" className="avatar-img" alt="profile" src={pictureUrl} />
           </div>
           <hr />
           <div className="form-group">
-            <label htmlFor="userid">User ID:</label>
-            <input 
-              type="text" 
-              className="form-control" 
-              disabled id="userid" 
-              value={this.state.profile.userId} 
-            />
+            <label htmlFor="userid">
+              User ID:
+              <input type="text" className="form-control" disabled id="userid" value={userId} />
+            </label>
           </div>
           <div className="form-group">
-            <label htmlFor="name">Display Name:</label>
-            <input 
-              type="text" 
-              className="form-control" 
-              disabled id="name" 
-              value={this.state.profile.displayName} 
-            />
+            <label htmlFor="name">
+              Display Name:
+              <input type="text" className="form-control" disabled id="name" value={displayName} />
+            </label>
           </div>
           <div className="form-group">
-            <label htmlFor="status">Status Message:</label>
-            <input 
-              type="text" 
-              className="form-control" 
-              disabled id="status" 
-              value={this.state.profile.statusMessage} 
-            />
+            <label htmlFor="status">
+              Status Message:
+              <input
+                type="text"
+                className="form-control"
+                disabled
+                id="status"
+                value={statusMessage}
+              />
+            </label>
           </div>
           <div className="form-group">
-            <label htmlFor="info">LIFF Info:</label>
-            <textarea 
-              rows="10" 
-              className="form-control" 
-              disabled 
-              id="info" 
-              value={JSON.stringify(liffHelper.getLIFFInfo(), '', 2)} 
-            />
+            <label htmlFor="info">
+              LIFF Info:
+              <textarea
+                rows="10"
+                className="form-control"
+                disabled
+                id="info"
+                value={JSON.stringify(liffHelper.getLIFFInfo(), '', 2)}
+              />
+            </label>
           </div>
           <hr />
-          <button 
-            type="button" 
-            className="btn btn-default" 
-            onClick={() => { liffHelper.closeWindow() }}
+          <button
+            type="button"
+            className="btn btn-default"
+            onClick={() => {
+              liffHelper.closeWindow()
+            }}
           >
-          Close LIFF
+            Close LIFF
           </button>
         </div>
         <div className="col-lg-3" />

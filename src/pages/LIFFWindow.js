@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-// import PropTypes from 'prop-types'
 import liffHelper from '../utils/liffHelper'
 
 export default class LIFFWindow extends Component {

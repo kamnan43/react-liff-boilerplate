@@ -1,11 +1,22 @@
 {
-  "extends": ["standard", "standard-jsx"],
+  "parser": "babel-eslint",
+  "parserOptions": {
+    "ecmaVersion": 6,
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  },
+  "env": {
+    "es6": true,
+    "browser": true,
+    "node": true
+  },
+  "extends": ["airbnb", "prettier"],
+  "plugins": ["prettier"],
   "rules": {
-    "semi": [1, "always"],
-    "comma-dangle": [2, "always-multiline"],
-    "operator-linebreak": [0, "always"],
-    "space-before-function-paren": [0, "always"],
-    "jsx-quotes": ["error", "prefer-double"],
-    "no-new-func": [0, "always"]
+    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
+    "jsx-a11y/label-has-for": 0,
+    "prettier/prettier": ["error"]
   }
 }
