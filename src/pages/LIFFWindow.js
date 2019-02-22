@@ -10,6 +10,7 @@ export default class LIFFWindow extends Component {
     this.setTextInputRef = this.setTextInputRef.bind(this)
     this.openLIFFWindow = this.openLIFFWindow.bind(this)
     this.openLIFFWindowExternal = this.openLIFFWindowExternal.bind(this)
+    // bind external function
     this.closeWindow = liffHelper.closeWindow()
   }
 

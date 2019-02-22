@@ -77,7 +77,6 @@ class SendMessage extends Component {
   }
 
   sendMessageToChat(messageKey) {
-    // let value = this.textInput[messageKey].value
     const { [messageKey]: value } = this.textInput
     const {
       isGeolocationAvailable,

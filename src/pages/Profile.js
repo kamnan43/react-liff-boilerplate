@@ -3,6 +3,7 @@ import man from '../assets/img/man.png'
 import liffHelper from '../utils/liffHelper'
 
 export default class Profile extends Component {
+  // default state
   state = {
     profile: {
       pictureUrl: man,
