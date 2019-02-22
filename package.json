@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "bootstrap": "^3.3.7",
+    "prop-types": "^15.7.2",
     "react": "^16.4.1",
     "react-bootstrap": "^0.32.1",
     "react-dom": "^16.4.1",
@@ -26,7 +27,6 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "localstart": "PORT=8000 react-scripts start",
     "lt": "node ./node_modules/localtunnel/bin/client --port=8000",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
