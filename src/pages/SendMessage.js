@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import swal from 'sweetalert2'
 import { geolocated } from 'react-geolocated'
-import liffHelper from '../utils/liffHelper'
+import liffHelper from '../utils/LiffHelper'
 import messageHelper from '../utils/messagingApiHelper'
 
 const messageTypes = [
@@ -173,19 +173,19 @@ class SendMessage extends Component {
   renderMessageTypeKey() {
     return messageTypes.map(messageType => (
       <div className="form-group" key={messageType.key}>
+        <label htmlFor={`msg_${messageType.key}`} className="message-label">
+          {messageType.label}
+          {':'}
+        </label>
         <div className="input-group">
-          <label htmlFor={`msg_${messageType.key}`} className="message-label">
-            {messageType.label}
-            :
-            <input
-              ref={this.setTextInputRef.bind(this, messageType.key)}
-              id={`msg_${messageType.key}`}
-              disabled={!messageType.editable}
-              type="text"
-              className="form-control"
-              defaultValue={messageType.value}
-            />
-          </label>
+          <input
+            ref={this.setTextInputRef.bind(this, messageType.key)}
+            id={`msg_${messageType.key}`}
+            disabled={!messageType.editable}
+            type="text"
+            className="form-control"
+            defaultValue={messageType.value}
+          />
           <span className="input-group-btn">
             <button
               type="button"

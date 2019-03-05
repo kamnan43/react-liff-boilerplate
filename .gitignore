@@ -5,6 +5,8 @@
 
 # testing
 /coverage
+/.storybook
+/stories
 
 # production
 /build

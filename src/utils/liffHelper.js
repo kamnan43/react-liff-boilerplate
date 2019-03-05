@@ -1,9 +1,9 @@
-const liff = window.liff
+const { liff } = window
 let isInit = false
 let profile = {}
 let liffInfo = {}
 
-class liffHelper {
+class LiffHelper {
   init() {
     return new Promise((resolve, reject) => {
       if (!isInit) {
@@ -33,12 +33,13 @@ class liffHelper {
       this.init()
         .then(() => {
           if (isInit && !profile.userId) {
-            liff.getProfile()
+            liff
+              .getProfile()
               .then(pf => {
                 profile = pf
                 resolve(profile)
               })
-              .catch((err) => {
+              .catch(err => {
                 console.log('get profile error', err)
                 reject(err)
               })
@@ -46,7 +47,9 @@ class liffHelper {
             resolve(profile)
           }
         })
-        .catch(err => { reject(err) })
+        .catch(err => {
+          reject(err)
+        })
     })
   }
 
@@ -63,18 +66,19 @@ class liffHelper {
     return new Promise((resolve, reject) => {
       this.init()
         .then(() => {
-          liff.sendMessages(messagesToSend)
+          liff
+            .sendMessages(messagesToSend)
             .then(() => {
               resolve()
             })
-            .catch((err) => {
+            .catch(err => {
               reject(err)
             })
         })
-        .catch((err) => {
+        .catch(err => {
           reject(err)
         })
     })
   }
 }
-export default new liffHelper()
+export default new LiffHelper()

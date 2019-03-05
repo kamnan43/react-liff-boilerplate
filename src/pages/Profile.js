@@ -1,17 +1,29 @@
 import React, { Component } from 'react'
+import PropTypes from 'prop-types'
 import man from '../assets/img/man.png'
-import liffHelper from '../utils/liffHelper'
+import liffHelper from '../utils/LiffHelper'
 
 export default class Profile extends Component {
-  // default state
-  state = {
-    profile: {
-      pictureUrl: man,
-      userId: '',
-      displayName: '',
-      statusMessage: ''
-    }
-  }
+  // constructor(props) {
+  //   super(props)
+
+  //   this.setState({
+  //     ...props.profile
+  //   })
+  // }
+
+  // state = {
+  //   profile: {
+  //     pictureUrl: man,
+  //     userId: this.props.profile.userId || '',
+  //     displayName: this.props.profile.displayName || '',
+  //     statusMessage: this.props.profile.statusMessage || ''
+  //   }
+  // }
+
+  state: {
+    profile: { pictureUrl: man, userId: '', displayName: '', statusMessage: '' }
+  } = this.props
 
   componentDidMount() {
     liffHelper.getProfile().then(profile => this.setState({ profile }))
@@ -80,5 +92,23 @@ export default class Profile extends Component {
         <div className="col-lg-3" />
       </div>
     )
+  }
+}
+
+Profile.propTypes = {
+  profile: PropTypes.shape({
+    pictureUrl: PropTypes.string,
+    userId: PropTypes.string,
+    displayName: PropTypes.string,
+    statusMessage: PropTypes.string
+  })
+}
+
+Profile.defaultProps = {
+  profile: {
+    pictureUrl: man,
+    userId: '',
+    displayName: '',
+    statusMessage: ''
   }
 }
