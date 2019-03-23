@@ -1,14 +1,14 @@
 function createTextMessage(text) {
   return {
     type: 'text',
-    text: text
+    text
   }
 }
 
 function createImageMessage(originalContentUrl, previewImageUrl) {
   return {
     type: 'image',
-    originalContentUrl: originalContentUrl,
+    originalContentUrl,
     previewImageUrl
   }
 }
@@ -16,16 +16,16 @@ function createImageMessage(originalContentUrl, previewImageUrl) {
 function createVDOMessage(originalContentUrl, previewImageUrl) {
   return {
     type: 'video',
-    originalContentUrl: originalContentUrl,
-    previewImageUrl: previewImageUrl
+    originalContentUrl,
+    previewImageUrl
   }
 }
 
 function createAudioMessage(originalContentUrl, duration) {
   return {
     type: 'audio',
-    originalContentUrl: originalContentUrl,
-    duration: duration
+    originalContentUrl,
+    duration
   }
 }
 
@@ -36,8 +36,8 @@ function createButtonMessage(title, actions) {
     template: {
       type: 'buttons',
       text: title.substring(0, 60),
-      actions: actions,
-    },
+      actions
+    }
   }
 }
 
@@ -51,8 +51,8 @@ function createButtonMessageWithImage(title, text, imageUrl, actions) {
       title: title.substring(0, 40),
       text: text.substring(0, 60),
       // defaultAction: actions.getImageAction(extra),
-      actions: actions,
-    },
+      actions
+    }
   }
 }
 
@@ -61,8 +61,8 @@ function createLocationMessage(latitude, longitude) {
     type: 'location',
     title: 'my location',
     address: `@ ${latitude}:${longitude}`,
-    latitude: latitude,
-    longitude: longitude
+    latitude,
+    longitude
   }
 }
 
@@ -73,8 +73,8 @@ function createConfirmMessage(title, actions) {
     template: {
       type: 'confirm',
       text: title,
-      actions: actions,
-    },
+      actions
+    }
   }
 }
 
@@ -84,8 +84,8 @@ function createCarouselMessage(title, columns) {
     altText: title,
     template: {
       type: 'carousel',
-      columns: columns,
-    },
+      columns
+    }
   }
 }
 
@@ -107,8 +107,8 @@ function createImageCarouselMessage(title, columns) {
     altText: title,
     template: {
       type: 'image_carousel',
-      columns: columns,
-    },
+      columns
+    }
   }
 }
 
@@ -121,33 +121,33 @@ function createImageCarouselMessage(title, columns) {
 
 function createFlexMessage(title, containers) {
   return {
-    "type": "flex",
-    "altText": title,
-    "contents": containers
+    type: 'flex',
+    altText: title,
+    contents: containers
   }
 }
 
 function createFlexCarouselMessage(title, containers) {
   return createFlexMessage(title, {
-    "type": "carousel",
-    "contents": containers,
+    type: 'carousel',
+    contents: containers
   })
 }
 
 module.exports = {
-  createTextMessage: createTextMessage,
-  createImageMessage: createImageMessage,
-  createVDOMessage: createVDOMessage,
-  createAudioMessage: createAudioMessage,
-  createButtonMessage: createButtonMessage,
-  createButtonMessageWithImage: createButtonMessageWithImage,
-  createConfirmMessage: createConfirmMessage,
-  createLocationMessage: createLocationMessage,
-  createCarouselMessage: createCarouselMessage,
+  createTextMessage,
+  createImageMessage,
+  createVDOMessage,
+  createAudioMessage,
+  createButtonMessage,
+  createButtonMessageWithImage,
+  createConfirmMessage,
+  createLocationMessage,
+  createCarouselMessage,
   // createCarouselColumns: createCarouselColumns,
-  createImageCarouselMessage: createImageCarouselMessage,
+  createImageCarouselMessage,
   // createImageCarouselColumns: createImageCarouselColumns,
-  createFlexMessage: createFlexMessage,
-  createFlexCarouselMessage: createFlexCarouselMessage,
+  createFlexMessage,
+  createFlexCarouselMessage
   // maxCarouselColumns: maxCarouselColumns
 }

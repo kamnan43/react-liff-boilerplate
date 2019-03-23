@@ -21,9 +21,11 @@ export default class Profile extends Component {
   //   }
   // }
 
-  state: {
-    profile: { pictureUrl: man, userId: '', displayName: '', statusMessage: '' }
-  } = this.props
+  // state: {
+  //   profile: { pictureUrl: man, userId: '', displayName: '', statusMessage: '' }
+  // } = this.props
+
+  state = { ...this.props }
 
   componentDidMount() {
     liffHelper.getProfile().then(profile => this.setState({ profile }))

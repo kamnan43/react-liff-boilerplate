@@ -1,9 +1,21 @@
-import React, { Component } from 'react'
+import React, { Component, createRef } from 'react'
 import PropTypes from 'prop-types'
 import swal from 'sweetalert2'
 import { geolocated } from 'react-geolocated'
-import liffHelper from '../utils/LiffHelper'
-import messageHelper from '../utils/messagingApiHelper'
+import MessageField from './MessageField'
+import LiffHelper from '../utils/LiffHelper'
+import messageHelper from '../utils/MessagingApiHelper'
+
+const textMessageOptions = [
+  {
+    key: 'search imgur account',
+    value: 'search imgur account'
+  },
+  {
+    key: 'upload to imgur',
+    value: 'upload to imgur'
+  }
+]
 
 const messageTypes = [
   {
@@ -11,6 +23,12 @@ const messageTypes = [
     label: 'Text',
     editable: true,
     value: 'give me brown'
+  },
+  {
+    key: 'text_selection',
+    label: 'Text with Q&A',
+    editable: true,
+    value: textMessageOptions
   },
   {
     key: 'image',
@@ -66,18 +84,12 @@ const messageTypes = [
 ]
 
 class SendMessage extends Component {
-  constructor(props) {
-    super(props)
-
-    this.textInput = []
-
-    this.setTextInputRef = (key, element) => {
-      this.textInput[key] = element
-    }
+  closeLIFF = () => {
+    LiffHelper.closeWindow()
   }
 
-  sendMessageToChat(messageKey) {
-    const { [messageKey]: value } = this.textInput
+  // Declared as variable (or arrow-function) to auto-bind this or this will be undefiend
+  sendMessageToChat = (messageKey, messageValue) => {
     const {
       isGeolocationAvailable,
       isGeolocationEnabled,
@@ -98,19 +110,20 @@ class SendMessage extends Component {
     let message
     switch (messageKey) {
       case 'text':
-        message = messageHelper.createTextMessage(value)
+      case 'text_selection':
+        message = messageHelper.createTextMessage(messageValue)
         break
       case 'image':
-        message = messageHelper.createImageMessage(value, value)
+        message = messageHelper.createImageMessage(messageValue, messageValue)
         break
       case 'video':
         message = messageHelper.createVDOMessage(
-          value,
+          messageValue,
           'https://www.sample-videos.com/img/Sample-png-image-500kb.png'
         )
         break
       case 'audio':
-        message = messageHelper.createAudioMessage(value, 3600)
+        message = messageHelper.createAudioMessage(messageValue, 3600)
         break
       case 'button':
         message = messageHelper.createButtonMessageWithImage(
@@ -150,8 +163,7 @@ class SendMessage extends Component {
         message = messageHelper.createTextMessage('ABC')
     }
     if (message) {
-      liffHelper
-        .sendMessages([message])
+      LiffHelper.sendMessages([message])
         .then(() => {
           swal({
             type: 'success',
@@ -170,51 +182,23 @@ class SendMessage extends Component {
     }
   }
 
-  renderMessageTypeKey() {
-    return messageTypes.map(messageType => (
-      <div className="form-group" key={messageType.key}>
-        <label htmlFor={`msg_${messageType.key}`} className="message-label">
-          {messageType.label}
-          {':'}
-        </label>
-        <div className="input-group">
-          <input
-            ref={this.setTextInputRef.bind(this, messageType.key)}
-            id={`msg_${messageType.key}`}
-            disabled={!messageType.editable}
-            type="text"
-            className="form-control"
-            defaultValue={messageType.value}
-          />
-          <span className="input-group-btn">
-            <button
-              type="button"
-              className="btn btn-default"
-              disabled={messageType.disabled}
-              onClick={this.sendMessageToChat.bind(this, `${messageType.key}`)}
-            >
-              Send
-            </button>
-          </span>
-        </div>
-      </div>
-    ))
-  }
-
   render() {
     return (
       <div className="page-content">
         <div className="col-lg-3" />
         <div className="col-lg-6">
-          {this.renderMessageTypeKey()}
+          {messageTypes.map(messageType => (
+            <div className="form-group" key={messageType.key}>
+              <MessageField
+                messageFieldType={messageType}
+                sendMessageToChat={this.sendMessageToChat}
+                setTextInput={this.setTextInputRef}
+                inputRef={createRef()}
+              />
+            </div>
+          ))}
           <hr />
-          <button
-            type="button"
-            className="btn btn-default"
-            onClick={() => {
-              liffHelper.closeWindow()
-            }}
-          >
+          <button type="button" className="btn btn-default" onClick={this.closeLIFF}>
             Close LIFF
           </button>
         </div>
@@ -231,7 +215,7 @@ export default geolocated({
   userDecisionTimeout: 5000
 })(SendMessage)
 
-// For later implementation
+// For geolocation implementation
 SendMessage.propTypes = {
   isGeolocationAvailable: PropTypes.bool,
   isGeolocationEnabled: PropTypes.bool,

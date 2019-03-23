@@ -16,6 +16,9 @@
   "plugins": ["prettier"],
   "rules": {
     "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
+    "react/destructuring-assignment": "warning",
+    "react/prop-types": "warning",
+    "react/forbid-prop-types": "warning",
     "jsx-a11y/label-has-for": 0,
     "prettier/prettier": ["error"]
   }

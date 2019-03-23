@@ -1,20 +1,23 @@
 const { liff } = window
-let isInit = false
-let profile = {}
-let liffInfo = {}
 
 class LiffHelper {
+  constructor() {
+    this.initStatus = false
+    this.profile = {}
+    this.liffInfo = {}
+  }
+
   init() {
     return new Promise((resolve, reject) => {
-      if (!isInit) {
+      if (!this.isInit()) {
         liff.init(
           data => {
-            liffInfo = data
-            isInit = true
+            this.liffInfo = data
+            this.setInit(true)
             resolve()
           },
           err => {
-            console.log('Fail to init LIFF, please run inside LINE only')
+            console.log(`Fail to init LIFF, please run inside LINE only. ${err}`)
             reject()
           }
         )
@@ -24,41 +27,50 @@ class LiffHelper {
     })
   }
 
+  static closeWindow() {
+    liff.closeWindow()
+  }
+
+  static openWindow(url, external) {
+    liff.openWindow({ url, external })
+  }
+
+  isInit() {
+    return this.initStatus
+  }
+
+  setInit(initStatus) {
+    if (typeof initStatus !== 'boolean') throw new Error('setInit should accept only boolean')
+    this.initStatus = initStatus
+  }
+
   getLIFFInfo() {
-    return liffInfo
+    return this.liffInfo
   }
 
   getProfile() {
     return new Promise((resolve, reject) => {
       this.init()
         .then(() => {
-          if (isInit && !profile.userId) {
+          if (this.isInit() && !this.profile.userId) {
             liff
               .getProfile()
               .then(pf => {
-                profile = pf
-                resolve(profile)
+                this.profile = pf
+                resolve(this.profile)
               })
               .catch(err => {
                 console.log('get profile error', err)
                 reject(err)
               })
           } else {
-            resolve(profile)
+            resolve(this.profile)
           }
         })
         .catch(err => {
           reject(err)
         })
     })
-  }
-
-  closeWindow() {
-    liff.closeWindow()
-  }
-
-  openWindow(url, external) {
-    liff.openWindow({ url, external })
   }
 
   sendMessages(messages) {
@@ -81,4 +93,5 @@ class LiffHelper {
     })
   }
 }
-export default new LiffHelper()
+
+export default LiffHelper
