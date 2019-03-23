@@ -1,6 +1,9 @@
 {
   "name": "react-liff-boilerplate",
   "version": "1.0.0",
+  "engines": {
+    "node": "11.7.0"
+  },
   "private": true,
   "dependencies": {
     "@storybook/react": "^4.1.13",

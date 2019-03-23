@@ -34,21 +34,19 @@ const MessageButton = Component => ({ messageFieldType, sendMessageToChat, input
     sendMessageToChat(messageFieldType.key, inputRef.current.value)
   }
   return (
-    <React.Fragment>
-      <div className="input-group">
-        <Component messageFieldType={messageFieldType} inputRef={inputRef} />
-        <span className="input-group-btn">
-          <button
-            type="button"
-            className="btn btn-default"
-            disabled={!messageFieldType.editable}
-            onClick={handleClick}
-          >
-            Send
-          </button>
-        </span>
-      </div>
-    </React.Fragment>
+    <div className="input-group">
+      <Component messageFieldType={messageFieldType} inputRef={inputRef} />
+      <span className="input-group-btn">
+        <button
+          type="button"
+          className="btn btn-default"
+          disabled={!messageFieldType.editable}
+          onClick={handleClick}
+        >
+          Send
+        </button>
+      </span>
+    </div>
   )
 }
 

@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import liffHelper from '../utils/LiffHelper'
+import liffHelper from '../utils/liffHelper'
 
 export default class LIFFWindow extends Component {
   constructor(props) {

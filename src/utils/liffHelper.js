@@ -28,6 +28,7 @@ class LiffHelper {
   }
 
   static closeWindow() {
+    console.log('liff', liff)
     liff.closeWindow()
   }
 
