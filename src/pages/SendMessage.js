@@ -3,8 +3,8 @@ import PropTypes from 'prop-types'
 import swal from 'sweetalert2'
 import { geolocated } from 'react-geolocated'
 import MessageField from './MessageField'
-import LiffHelper from '../utils/LiffHelper'
-import messageHelper from '../utils/MessagingApiHelper'
+import LiffHelper from '../utils/liffHelper'
+import messageHelper from '../utils/messagingApiHelper'
 
 const textMessageOptions = [
   {
