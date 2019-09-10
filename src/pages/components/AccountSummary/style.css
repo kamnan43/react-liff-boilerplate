@@ -3,7 +3,11 @@
   align-items: center;
 }
 
-.account-summary .container-fluid {
-  background-color: #e20f00;
-  color: #ffffff;
+.account-summary label{
+  margin: 1rem 2rem;
+  align-items: center;
+}
+
+.account-summary .button-link{
+  font-size: 3rem;
 }
