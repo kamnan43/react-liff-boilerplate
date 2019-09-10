@@ -1,0 +1,9 @@
+.account-summary {
+  margin: 1rem 2rem;
+  align-items: center;
+}
+
+.account-summary .container-fluid {
+  background-color: #e20f00;
+  color: #ffffff;
+}
