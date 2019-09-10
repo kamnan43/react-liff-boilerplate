@@ -5,6 +5,7 @@ import Profile from './pages/Profile';
 import SendMessage from './pages/SendMessage';
 import LIFFWindow from './pages/LIFFWindow';
 import AccountSummary from './pages/components/AccountSummary/accountSummary';
+import Login from './pages/components/Login/login';
 import Header from './pages/components/Header';
 
 class App extends Component {
@@ -14,7 +15,8 @@ class App extends Component {
         <Header />
         <Router>
           <div>
-            <Route exact path="/" component={Profile} />
+            <Route exact path="/" component={Login} />
+            <Route path="/login" component={Login} />
             <Route path="/message" component={SendMessage} />
             <Route path="/window" component={LIFFWindow} />
             <Route path="/accountSummary" component={AccountSummary} />
