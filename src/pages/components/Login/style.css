@@ -1,0 +1,19 @@
+.login_page {
+  padding: 2rem;
+}
+
+.login_page_profile {
+  text-align: -webkit-center;
+}
+
+.login_page_profile .avatar-img {
+  margin-top: 0.625rem;
+}
+
+.login_page_profile_bg {
+  margin: 3rem 0; 
+  height: 150px;
+  width: 150px;
+  background-image: linear-gradient(to right, rgb(236, 148, 148) , red);
+  border-radius: 50%;
+}
