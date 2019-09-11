@@ -7,7 +7,7 @@ class AccountSummary extends Component {
   render() {
     return (
 
-      <div className="page-content account-summary">
+      <div className="account-summary">
         <div className="col-lg-3" />
           <div className="col-lg-6">
 

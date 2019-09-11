@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import man from '../../../assets/img/man.png';
 import liffHelper from '../../../utils/liffHelper';
 import ReactCodeInput from 'react-code-input';
-import { Redirect } from 'react-router-dom';
 import { Button } from 'react-bootstrap';
 import './style.css';
 
@@ -25,12 +24,6 @@ class Login extends Component {
     this.setState({
       redirect: true
     })
-  }
-
-  renderRedirect = () => {
-    if (this.state.redirect) {
-      return <Redirect to='/accountSummary' />
-    }
   }
 
   handlePIN(value) {
