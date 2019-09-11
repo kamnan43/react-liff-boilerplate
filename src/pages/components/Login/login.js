@@ -27,7 +27,7 @@ class Login extends Component {
   }
 
   handlePIN(value) {
-    const mockPIN = "9999"
+    const mockPIN = 9999
     if (mockPIN === value) {
       this.setRedirect();
     }

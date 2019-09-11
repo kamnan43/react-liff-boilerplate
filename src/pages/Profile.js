@@ -8,17 +8,12 @@ export default class Profile extends Component {
     this.state = {
       profile: {
         pictureUrl: man,
-      },
-      token: ''
+      }
     };
     liffHelper.getProfile()
       .then(profile => {
         this.setState({ profile });
       });
-    liffHelper.getAccessToken()
-      .then(token => {
-        this.setState({ token });
-      })
   }
 
   render() {
@@ -36,7 +31,7 @@ export default class Profile extends Component {
           </div>
           <div className="form-group">
             <label htmlFor="token">Token:</label>
-            <textarea rows="text" className="form-control" disabled id="token" value={this.state.token}/>
+            <textarea rows="text" className="form-control" disabled id="token" value={JSON.stringify(liffHelper.getLIFFInfo())}/>
           </div>
           <div className="form-group">
             <label htmlFor="name">Display Name:</label>
