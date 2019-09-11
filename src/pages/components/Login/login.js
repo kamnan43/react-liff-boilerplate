@@ -43,7 +43,7 @@ class Login extends Component {
   render() {
     const first_paragraph = "hello " + this.state.profile.userId;
     return (
-      <div className="page-content">
+      <div>
         {this.renderRedirect()}
         <div className="login_page">
           <div className="container">
@@ -54,19 +54,21 @@ class Login extends Component {
             </div>
 
             <div className="form-group">
-              <h1 alt={first_paragraph}>Hello {this.state.profile.displayName}</h1>
+              <h3 alt={first_paragraph}>Hello {this.state.profile.displayName}</h3>
             </div>
             <div className="form-group">
-              <label alt="Please insert youy PIN" htmlFor="secondParagraph">Please insert youy PIN.</label>
+              <h5 alt="Please insert youy PIN" >Please insert youy PIN.</h5>
             </div>
             <ReactCodeInput
               type='password'
               fields={4}
               onChange={(value) => { this.handlePIN(value) }}
+              className="login-page_react-input-code"
+              inputMode="numeric"
             />
           </div>
         </div>
-        <Button variant="danger" size="lg" onClick={() => { liffHelper.closeWindow() }}>Close LIFF</Button>
+        <Button variant="danger" size="lg" onClick={() => { liffHelper.closeWindow() }}>Back to main menu</Button>
       </div>
     );
   }
