@@ -17,6 +17,7 @@ export default class Profile extends Component {
   }
 
   render() {
+    const token = liffHelper.getToken();
     return (
       <div className="page-content">
         <div className="col-lg-3" />
@@ -31,7 +32,7 @@ export default class Profile extends Component {
           </div>
           <div className="form-group">
             <label htmlFor="token">Token:</label>
-            <textarea rows="text" className="form-control" disabled id="token" value={JSON.stringify(liffHelper.getLIFFInfo())}/>
+            <input type="text" className="form-control" disabled id="token" value={token} />
           </div>
           <div className="form-group">
             <label htmlFor="name">Display Name:</label>
