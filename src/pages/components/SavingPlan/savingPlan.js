@@ -69,11 +69,6 @@ class SavingPlan extends Component {
         backStep = 'sp10';
         nextStep = 'sp1';
       }
-      // console.log('*****************');
-      // console.log('step',this.state.componentRender);
-      // console.log('backStep',backStep);
-      // console.log('nextStep',nextStep);
-      // console.log('*****************');
       switch (this.state.componentRender) {
         case 'sp1':
           return <Sp1 />;
@@ -111,14 +106,12 @@ class SavingPlan extends Component {
         <div className="col-lg-3" />
           <div className="col-lg-6">
 
-            <div className="navi-header">Saving Plan</div>
-
             {renderComponent()}
 
             <div className="wrap-sp1">
               <div className="wrap-button">
-                <button className="button-link" onClick={() => gotoStep(backStep)}>Back</button>
                 <button className="button-link" onClick={() => gotoStep(nextStep)}>Next</button>
+                <button className="button-link" onClick={() => gotoStep(backStep)}>Back</button>
               </div> 
             </div>
           </div>
