@@ -25,10 +25,35 @@
 
 .bg-red{
   padding: 0.5rem;
-  background:#fa1616e8;
+  color: white;
+  background:#E57373;
+  border-radius: 1rem;
 }
 
 .message-label {
   text-align: left;
   display: block;
+}
+
+.navi-header{
+  color: red;
+  font-size: 3rem;
+  margin: 0 0 2rem 0;
+  font-weight: bold;
+}
+
+.wrap-button {
+  margin-top: 4rem;
+  width: 100%;
+  height: 12rem;
+}
+
+.wrap-button .button-link {
+  width: 100%;
+  height: 100%;
+  border-radius: 1rem;
+  color: white;
+  background:#E57373;
+  text-transform: uppercase;
+  text-decoration: none;
 }

@@ -9,23 +9,26 @@ class AccountSummary extends Component {
 
       <div className="page-content account-summary">
         <div className="col-lg-3" />
-        <div className="col-lg-6">
-          <div className="form-group bg-red accountSummary">
-            <label>Primary Account: </label>
-            <span>10,000 THB</span>
+          <div className="col-lg-6">
+
+            <div className="navi-header">Account Summary</div>
+
+            <div className="form-group bg-red accountSummary">
+              <label>Primary Account: </label>
+              <span>10,000 THB</span>
+            </div>
+            <div className="form-group bg-red">
+              <label>Saving Account: </label>
+              <span>5,000 THB</span>
+            </div>
+            <div className="form-group bg-red">
+              <label>Total Banlance: </label>
+              <span>15,000 THB</span>
+            </div>
+            <div className="wrap-button">
+              <button className="button-link"><Link to="/" >Back</Link></button>
+            </div>
           </div>
-          <div className="form-group bg-red">
-            <label>Saving Account: </label>
-            <span>5,000 THB</span>
-          </div>
-          <div className="form-group bg-red">
-            <label>Total Banlance: </label>
-            <span>15,000 THB</span>
-          </div>
-          <div>
-            <button className="button-link"><Link to="/" >Back</Link></button>
-          </div>
-        </div>
         <div>
         
         </div>
