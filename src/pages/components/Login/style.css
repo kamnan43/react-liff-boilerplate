@@ -17,3 +17,18 @@
   background-image: linear-gradient(to right, rgb(236, 148, 148) , red);
   border-radius: 50%;
 }
+
+.login-page_react-input-code input{
+  font-family: monospace;
+    border-radius: 6px;
+    border: 1px solid #E4D5D3;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 10px 0px;
+    margin: 4px;
+    padding-left: 0.75rem;
+    width: 36px;
+    height: 42px;
+    font-size: 1.5rem;
+    box-sizing: border-box;
+    color: black;
+    background-color: white;
+}
