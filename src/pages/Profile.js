@@ -9,7 +9,7 @@ export default class Profile extends Component {
       profile: {
         pictureUrl: man,
       },
-      token: {}
+      token: ''
     };
     liffHelper.getProfile()
       .then(profile => {
