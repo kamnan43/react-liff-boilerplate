@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import man from '../../../assets/img/man.png';
 import liffHelper from '../../../utils/liffHelper';
 import ReactCodeInput from 'react-code-input';
-import { Redirect } from 'react-router-dom';
 import { Button } from 'react-bootstrap';
 import './style.css';
 
@@ -27,12 +26,6 @@ class Login extends Component {
     })
   }
 
-  renderRedirect = () => {
-    if (this.state.redirect) {
-      return <Redirect to='/accountSummary' />
-    }
-  }
-
   handlePIN(value) {
     const mockPIN = "9999"
     if (mockPIN === value) {
@@ -44,7 +37,6 @@ class Login extends Component {
     const first_paragraph = "hello " + this.state.profile.userId;
     return (
       <div className="page-content">
-        {this.renderRedirect()}
         <div className="login_page">
           <div className="container">
             <div className="login_page_profile">

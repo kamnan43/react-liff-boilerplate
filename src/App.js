@@ -4,6 +4,7 @@ import './App.css';
 import SendMessage from './pages/SendMessage';
 import LIFFWindow from './pages/LIFFWindow';
 import AccountSummary from './pages/components/AccountSummary/accountSummary';
+import SavingPlan from './pages/components/SavingPlan/savingPlan';
 import Login from './pages/components/Login/login';
 import Header from './pages/components/Header';
 
@@ -19,6 +20,7 @@ class App extends Component {
             <Route path="/message" component={SendMessage} />
             <Route path="/window" component={LIFFWindow} />
             <Route path="/accountSummary" component={AccountSummary} />
+            <Route path="/savingPlan" component={SavingPlan} />
           </div>
         </Router>
       </div>
