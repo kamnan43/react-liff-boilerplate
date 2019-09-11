@@ -1,5 +1,6 @@
 .app {
   text-align: center;
+  font-size: 2rem;
 }
 
 .app-header {
@@ -18,7 +19,13 @@
 }
 
 .page-content {
-  padding: 5px;
+  padding: 5rem;
+}
+
+
+.bg-red{
+  padding: 0.5rem;
+  background:#fa1616e8;
 }
 
 .message-label {
