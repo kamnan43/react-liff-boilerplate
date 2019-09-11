@@ -5,7 +5,8 @@ class Sp3 extends Component {
   render() {
     return (
       <div className="wrap-sp3">
-        Sp3
+        <div className="navi-header">Set amount</div>
+        <div><input className='savingPlanInput'  placeholder="Set amount here"></input></div>
       </div>
     )
   }
