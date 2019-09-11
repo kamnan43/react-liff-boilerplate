@@ -25,6 +25,16 @@
   border-radius: 1rem;
 }
 
+.bg-red-savingPlan{
+  padding: 5rem;
+  color: white;
+  background:#E57373;
+  border-radius: 1rem;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+
 .message-label {
   text-align: left;
   display: block;
