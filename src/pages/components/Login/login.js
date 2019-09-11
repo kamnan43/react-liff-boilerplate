@@ -3,6 +3,8 @@ import man from '../../../assets/img/man.png';
 import liffHelper from '../../../utils/liffHelper';
 import ReactCodeInput from 'react-code-input';
 import { Redirect } from 'react-router-dom';
+import { Button } from 'react-bootstrap';
+import './style.css';
 
 class Login extends Component {
   constructor(props) {
@@ -34,7 +36,6 @@ class Login extends Component {
   handlePIN(value) {
     const mockPIN = "9999"
     if (mockPIN === value) {
-      console.log("mhom will fuck you");
       this.setRedirect();
     }
   }
@@ -44,27 +45,28 @@ class Login extends Component {
     return (
       <div className="page-content">
         {this.renderRedirect()}
-        <div className="col-lg-3" />
-        <div className="col-lg-6">
-          <div>
-            <img width="130" className="avatar-img" alt="profile" src={this.state.profile.pictureUrl} />
+        <div className="login_page">
+          <div className="container">
+            <div className="login_page_profile">
+              <div className="login_page_profile_bg">
+                <img width="130" className="avatar-img" alt="profile" src={this.state.profile.pictureUrl} />
+              </div>
+            </div>
+
+            <div className="form-group">
+              <h1 alt={first_paragraph}>Hello {this.state.profile.displayName}</h1>
+            </div>
+            <div className="form-group">
+              <label alt="Please insert youy PIN" htmlFor="secondParagraph">Please insert youy PIN.</label>
+            </div>
+            <ReactCodeInput
+              type='password'
+              fields={4}
+              onChange={(value) => { this.handlePIN(value) }}
+            />
           </div>
-          <hr />
-          <div className="form-group">
-            <label alt={first_paragraph} htmlFor="firstParagraph">Hello {this.state.profile.userId}</label>
-          </div>
-          <div className="form-group">
-            <label alt="Please insert youy PIN" htmlFor="secondParagraph">Please insert youy PIN</label>
-          </div>
-          <ReactCodeInput
-            type='password'
-            fields={4}
-            onChange={(value) => { this.handlePIN(value) }}
-          />
-          <hr />
-          <button type="button" className="btn btn-default" onClick={() => { liffHelper.closeWindow() }}>Close LIFF</button>
         </div>
-        <div className="col-lg-3" />
+        <Button variant="danger" size="lg" onClick={() => { liffHelper.closeWindow() }}>Close LIFF</Button>
       </div>
     );
   }
