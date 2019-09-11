@@ -37,7 +37,6 @@ class Login extends Component {
     const first_paragraph = "hello " + this.state.profile.userId;
     return (
       <div>
-        {this.renderRedirect()}
         <div className="login_page">
           <div className="container">
             <div className="login_page_profile">
