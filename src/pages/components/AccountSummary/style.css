@@ -8,3 +8,17 @@
   align-items: center;
 }
 
+.account-summary_textbox {
+  padding: 1rem 1rem;
+  margin-bottom: 1rem;
+  background-color: #ffffff;
+  border-radius: 1rem;
+  border-style: solid;
+  border-color: #E57373;
+  color: #6C6463;
+}
+
+.account-summary_container{
+  margin-top: 2rem;
+}
+
