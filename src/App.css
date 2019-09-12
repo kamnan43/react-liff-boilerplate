@@ -18,6 +18,14 @@
   border-radius: 50%;
 }
 
+.topic-header{
+  padding: 1rem;
+  color: white;
+  background:#BE3A34;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
 .bg-red{
   padding: 0.5rem;
   color: white;
@@ -26,12 +34,14 @@
 }
 
 .bg-red-savingPlan{
-  padding: 5rem;
-  color: white;
-  background:#E57373;
-  border-radius: 1rem;
-  margin-top: 2rem;
+  padding: 2rem 1rem;
   margin-bottom: 2rem;
+  background-color: #ffffff;
+  border-radius: 1rem;
+  border-style: solid;
+  border-color: #E57373;
+  color: #6C6463;
+  margin-top: 2rem;
 }
 
 
@@ -41,16 +51,16 @@
 }
 
 .navi-header{
-  color: red;
-  font-size: 3rem;
-  margin: 0 0 2rem 0;
-  font-weight: bold;
+  color: #E57373;
+  font-size: 1.5rem;
+  margin: 0 0 1rem 0;
+  font-weight: 700;
 }
 
 .wrap-button {
-  margin-top: 4rem;
+  margin-top: 2rem;
   width: 100%;
-  height: 12rem;
+  height: 5rem;
 }
 
 .wrap-button .button-link {
