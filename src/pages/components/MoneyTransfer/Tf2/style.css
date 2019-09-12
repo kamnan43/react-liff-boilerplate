@@ -1,0 +1,16 @@
+.wrap-tf9 .wrap-button .button-link{
+  height: 8rem;
+  margin-bottom: 1rem;
+}
+
+.tf9_fieldset {
+  min-width: 0;
+  padding: 0;
+  margin: 0 1rem;
+  border: 0;
+  text-align: left;
+}
+
+.form-check-label {
+  margin: 0;
+} 

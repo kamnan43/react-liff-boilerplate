@@ -6,8 +6,8 @@ import LIFFWindow from './pages/LIFFWindow';
 import Profile from './pages/Profile';
 import AccountSummary from './pages/components/AccountSummary/accountSummary';
 import SavingPlan from './pages/components/SavingPlan/savingPlan';
+import MoneyTransfer from './pages/components/MoneyTransfer/moneyTransfer';
 import Login from './pages/components/Login/login';
-import Header from './pages/components/Header';
 
 class App extends Component {
   render() {
@@ -23,6 +23,7 @@ class App extends Component {
             <Route path="/window" component={LIFFWindow} />
             <Route path="/accountSummary" component={AccountSummary} />
             <Route path="/savingPlan" component={SavingPlan} />
+            <Route path="/moneyTransfer" component={MoneyTransfer} />
           </div>
         </Router>
       </div>

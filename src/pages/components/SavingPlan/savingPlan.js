@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import liffHelper from '../../../utils/liffHelper';
 import Sp1 from './Sp1/sp1'
 import Sp2 from './Sp2/sp2'
 import Sp3 from './Sp3/sp3'
@@ -101,6 +102,19 @@ class SavingPlan extends Component {
       this.setState({componentRender: step});
     }
 
+    const renderButton = () => {
+      if(this.state.componentRender === 'sp11'){
+        return (<div className="wrap-button">
+        <button className="button-link" onClick={() => { liffHelper.closeWindow() }}>Back to main menu</button>
+      </div>);
+      }else {
+        return (<div className="wrap-button">
+        <button className="button-link" onClick={() => gotoStep(nextStep)}>Next</button>
+        <button className="button-link" onClick={() => gotoStep(backStep)}>Back</button>
+      </div> );
+      }
+    }
+
     return (
       <div className="saving-plan">
         <div className="col-lg-3" />
@@ -109,10 +123,7 @@ class SavingPlan extends Component {
             {renderComponent()}
 
             <div className="wrap-sp1">
-              <div className="wrap-button">
-                <button className="button-link" onClick={() => gotoStep(nextStep)}>Next</button>
-                <button className="button-link" onClick={() => gotoStep(backStep)}>Back</button>
-              </div> 
+              {renderButton()} 
             </div>
           </div>
         <div>

@@ -27,6 +27,9 @@ export default class Header extends Component {
         <li className={`nav-item${this.isActive('/profile')}`}>
           <a className="nav-link" href="/profile">Profile-info</a>
         </li>
+        <li className={`nav-item${this.isActive('/moneyTransfer')}`}>
+          <a className="nav-link" href="/moneyTransfer">Money Transfer</a>
+        </li>
       </ul>
     );
   }

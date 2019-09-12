@@ -2,7 +2,6 @@ const liff = window.liff;
 let isInit = false;
 let profile = {};
 let liffInfo = {};
-let token = '';
 
 class liffHelper {
   init() {
